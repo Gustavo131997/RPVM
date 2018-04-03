@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project basedir="." default="build">
+	<path id="build.classpath">
+		<pathelement location="classes"/>
+	</path>
+	<target name="init">
+		<mkdir dir="classes"/>
+	</target>
+	<target name="clean">
+		<delete dir="classes"/>
+	</target>
+	<target depends="init" name="build">
+		<javac srcdir="." destdir="classes" source="1.5" target="1.5" fork="yes">
+			<classpath refid="build.classpath"/>
+			<include name="lanzador/RPVM_main.java"/>
+			<include name="modelo/Formato.java"/>
+			<include name="modelo/Genero.java"/>
+			<include name="modelo/Disco.java"/>
+			<include name="modelo/Pelicula.java"/>
+			<include name="modelo/Reproducible.java"/>
+			<include name="modelo/ListaMultimedia.java"/>
+			<include name="modelo/Multimedia.java"/>
+		</javac>
+	</target>
+</project>
